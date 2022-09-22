@@ -46,4 +46,11 @@
 ### npm i -D eslint-config-prettier 
    version "^8.5.0"
 
+### npm i styled-components
+  version "^5.3.5"
+
+### npm i @types/styled-components 
+  version "^5.1.26"
+
+
 
