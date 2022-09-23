@@ -7,8 +7,12 @@ export const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   }
+  &:focus + input , textarea {
+    outline:none;
+  }
   button {
     cursor: pointer;
+    border: none;
   }
   a {
     text-decoration: none;
