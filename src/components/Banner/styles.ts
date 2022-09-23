@@ -13,17 +13,22 @@ export const Container = styled.section`
   height: calc(100vh - 60px);
   h1 {
     margin: 0 auto;
-    font-size: 2rem;
+    font-style: Monserrat;
+    font-size: 56px;
+    font-weight: normal;
     text-shadow: 0.2px 0.5px #fff;
-    color: #fffddd;
+    color: #CBCACA;
     letter-spacing: 0.188rem;
   }
   h2 {
-    margin: 1.25rem auto 0 auto;
+    width: 25em;
+    margin: 12.25rem auto 0 auto;
     padding: 0 5rem;
-    font-size: 2rem;
+    font-style: Monserrat;
+    font-size: 48px;
+    font-weight: normal;
     text-shadow: 0.2px 0.5px #ccc;
-    color: #fffddd;
+    color: #CBCACA;
     letter-spacing: 0.188rem;
     text-align: center;
   }
