@@ -36,7 +36,7 @@ export const Container = styled.section`
           font-weight: Medium;
           font-size: 18px;
           text-shadow: 0.2px 0.5px #ccc;
-          color: #000;
+          color: grey;
           width: 38em;
           text-align: justify;
         }
