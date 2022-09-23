@@ -5,7 +5,7 @@ export const Contact: React.FC = () => {
     <Container>
       <div>
         <section>
-          <h4>Contato</h4>
+          <h4>Contato:</h4>
           <form action="#" method="post" encType="multipart/form-data">
             <label>
               <span>
@@ -28,7 +28,7 @@ export const Contact: React.FC = () => {
             </label>
 
             <label>
-              <span>
+              <span id='message'>
                 <i className="icon icon-comment"></i> Mensagem
               </span>
               <textarea name="mensagem" rows={3} required={true}></textarea>

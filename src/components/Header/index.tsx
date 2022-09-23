@@ -6,7 +6,7 @@ export const Header: React.FC = () => {
       <div>
         <a href="#">
           <img src={logo} alt="logo" />
-          G.P.A
+          <span>G.P.A</span>
         </a>
       </div>
       {/*colocar nav */}
@@ -23,7 +23,7 @@ export const Header: React.FC = () => {
         <li>
           <a href="#contato"> Contato </a>
         </li>
-        <li>
+        <li id="cadastro">
           <a href="#contato"> Entre ou Cadastre-se </a>
         </li>
       </List>
