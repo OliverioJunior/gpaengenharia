@@ -24,7 +24,7 @@ export const Header: React.FC = () => {
           <a href="#contato"> Contato </a>
         </li>
         <li>
-          <a href="#contato"> Entre ou Cadastre-se </a>
+          <a href="/LoginOrSingIn"> Entre ou Cadastre-se </a>
         </li>
       </List>
     </StyledHeader>
