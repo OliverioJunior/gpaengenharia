@@ -17,7 +17,7 @@ export const Container = styled.section`
     font-size: 56px;
     font-weight: normal;
     text-shadow: 0.2px 0.5px #fff;
-    color: #CBCACA;
+    color: #cbcaca;
     letter-spacing: 0.188rem;
   }
   h2 {
@@ -28,7 +28,7 @@ export const Container = styled.section`
     font-size: 48px;
     font-weight: normal;
     text-shadow: 0.2px 0.5px #ccc;
-    color: #CBCACA;
+    color: #cbcaca;
     letter-spacing: 0.188rem;
     text-align: center;
   }

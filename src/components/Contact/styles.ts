@@ -1,19 +1,15 @@
 import styled from 'styled-components';
 export const Container = styled.section`
-
   display: flex;
   padding: 2em 0 0 0;
   flex: 1;
-
 
   div {
     flex: 1;
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-    background-color: #F5F5F5;
-    
-
+    background-color: #f5f5f5;
 
     section {
       display: flex;
@@ -21,8 +17,6 @@ export const Container = styled.section`
       padding: 0 100px 0 0;
       width: 30em;
       margin-left: 10em;
-
-
 
       form {
         padding: 2em;
@@ -40,7 +34,7 @@ export const Container = styled.section`
           height: 5em;
         }
 
-        #message{
+        #message {
           margin-top: 1.3em;
         }
 
@@ -54,20 +48,17 @@ export const Container = styled.section`
           display: flex;
           flex-direction: column;
 
-          span{
+          span {
             padding: 0.3em 0 0.3em 0;
           }
 
-          input{
+          input {
             padding-left: 1em;
             height: 2em;
             border-radius: 3px;
             border: 0.5px solid black;
-        
           }
         }
-
-        
       }
       p {
         margin: 1.25rem auto 0 auto;
