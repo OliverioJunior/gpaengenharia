@@ -28,7 +28,7 @@ export const Contact: React.FC = () => {
             </label>
 
             <label>
-              <span id='message'>
+              <span id="message">
                 <i className="icon icon-comment"></i> Mensagem
               </span>
               <textarea name="mensagem" rows={3} required={true}></textarea>
