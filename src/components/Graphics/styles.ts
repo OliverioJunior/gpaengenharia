@@ -2,9 +2,9 @@ import styled from 'styled-components';
 export const Container = styled.section`
 
   display: flex;
-  padding: 0 5rem;
+  padding: 0 8.5rem;
   flex: 1;
-  height: 100vh;
+  height: 90vh;
 
   div {
     flex: 1;
@@ -23,10 +23,23 @@ export const Container = styled.section`
         font-weight: bold;
         text-shadow: 0.2px 0.5px #fff;
         color: #000;
-       
+
       }
 
       p{
+        margin: 2.15em auto 2em auto;
+        padding: 1.5rem 0;
+        font-size: 18px;
+        text-shadow: 0.2px 0.5px #ccc;
+        font-size: 18px;
+        font-style: Monserrat;
+        font-weight: Medium;
+        color: grey;
+        text-align: justify;
+        line-height: 27px;
+
+      }
+      span {
         margin: 4.25rem auto 0 auto;
         padding: 1.5rem 0;
         font-size: 1rem;
@@ -37,18 +50,6 @@ export const Container = styled.section`
         color: grey;
         text-align: justify;
         line-height: 23px;
-      }
-      span {
-        padding: 1.5rem 0;
-        font-size: 1rem;
-        text-shadow: 0.2px 0.5px #ccc;
-        font-size: 18px;
-        font-style: Monserrat;
-        font-weight: regular;
-        color: grey;
-        text-align: justify;
-        position: relative;
-        top: 2em;
       }
 
     }
