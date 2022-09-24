@@ -9,8 +9,8 @@ export const Header = styled.header`
   width: 100%;
   height: 60px;
 
-  div{
-    span{
+  div {
+    span {
       color: #545252;
     }
   }
@@ -24,27 +24,23 @@ export const List = styled.ul`
     color: #545252;
     padding: 0 1.5em;
 
-
     &:nth-child(n + 2) {
       margin-left: 0.625rem;
     }
 
     &:hover {
-      
-        border-bottom: 0.002em solid grey;
-        transition: 2s;
-      
+      border-bottom: 0.002em solid grey;
+      transition: 2s;
     }
   }
-  #cadastro{
-
+  #cadastro {
     border: 1px solid blue;
     padding: 0.5em;
     border-radius: 6px;
     color: white;
     background-color: blue;
 
-    &:hover{
+    &:hover {
       transform: scale(1.1);
       transition: 0.3s;
     }
