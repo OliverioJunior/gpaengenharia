@@ -4,7 +4,7 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 80px;
+  padding: 0 9em;
 
   width: 100%;
   height: 60px;
@@ -29,8 +29,15 @@ export const List = styled.ul`
     }
 
     &:hover {
-      border-bottom: 0.002em solid grey;
-      transition: 2s;
+
+      border-radius: 6px;
+      background-color: #E3E3E3;
+
+      a{
+        transform: scale(1.1)
+        transition: 0.5s
+      }
+
     }
   }
   #cadastro {

@@ -2,6 +2,7 @@ import { Container, ContainerImg } from './styles';
 import gestao from '../../assets/gestao.png';
 export const Benefits: React.FC = () => {
   return (
+    <>
     <Container>
       <div>
         <section>
@@ -14,7 +15,7 @@ export const Benefits: React.FC = () => {
             chegando a 30%.
           </p>
         </section>
-        <section>
+        <section id='subtema'>
           <h3>Gastos extras:</h3>
           <p>
             As empresas de construção civil calculam sempre um valor extra no
@@ -22,10 +23,13 @@ export const Benefits: React.FC = () => {
             ao longo da execução do projeto
           </p>
         </section>
+
       </div>
       <ContainerImg>
         <img src={gestao} />
       </ContainerImg>
     </Container>
+    <hr/>
+  </>
   );
 };

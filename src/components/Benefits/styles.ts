@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 export const Container = styled.section`
   display: flex;
-  padding: 0 5rem;
+  padding: 0 9rem;
   flex: 1;
   height: 100vh;
 
@@ -9,7 +9,7 @@ export const Container = styled.section`
     width: 50%;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
 
     section {
@@ -24,21 +24,28 @@ export const Container = styled.section`
       }
 
       p {
-        margin: 1.25rem auto 0 auto;
+        margin: 1.25rem 1em 0 0;
         padding: 1.5rem 0;
         font-style: Monserrat;
         font-weight: Medium;
         font-size: 18px;
         color: gray;
-        width: 38rem;
+        width: 30rem;
         text-align: justify;
       }
+    }
+
+    #subtema{
+      position: relative;
+      left: -3.55em;
     }
   }
 `;
 
 export const ContainerImg = styled.div`
   img {
-    width: 500px;
+    width: 662px;
+    height: 489px;
   }
+
 `;

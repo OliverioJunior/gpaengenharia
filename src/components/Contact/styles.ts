@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 export const Container = styled.section`
   display: flex;
-  padding: 2em 0 0 0;
   flex: 1;
 
   div {
@@ -10,6 +9,7 @@ export const Container = styled.section`
     align-items: flex-end;
     justify-content: flex-end;
     background-color: #f5f5f5;
+    margin-left: -1em;
 
     section {
       display: flex;
@@ -18,8 +18,14 @@ export const Container = styled.section`
       width: 30em;
       margin-left: 10em;
 
+      h4{
+        margin-top:1em;
+      }
+
       form {
-        padding: 2em;
+        width: 30em;
+        padding: 2em 2em 2em 1.7em;
+        margin: 1em auto;
         display: flex;
         flex-direction: column;
         background-color: #cfcfcd;
@@ -71,9 +77,9 @@ export const Container = styled.section`
       }
     }
     img {
-      margin: auto auto 1.5em auto;
-      width: 680px;
-      height: 380px;
+      margin: auto auto 1.3em auto;
+      width: 670px;
+      height: 400px;
     }
   }
 `;
