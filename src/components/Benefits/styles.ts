@@ -35,7 +35,7 @@ export const Container = styled.section`
       }
     }
 
-    #subtema{
+    #subtema {
       position: relative;
       left: -3.55em;
     }
@@ -47,5 +47,4 @@ export const ContainerImg = styled.div`
     width: 662px;
     height: 489px;
   }
-
 `;
