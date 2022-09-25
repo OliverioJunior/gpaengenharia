@@ -29,15 +29,13 @@ export const List = styled.ul`
     }
 
     &:hover {
-
       border-radius: 6px;
-      background-color: #E3E3E3;
+      background-color: #e3e3e3;
 
-      a{
-        transform: scale(1.1)
-        transition: 0.5s
+      a {
+        transform: scale(1.1);
+        transition: 0.5s;
       }
-
     }
   }
   #cadastro {

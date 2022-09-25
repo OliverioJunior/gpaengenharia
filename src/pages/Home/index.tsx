@@ -14,6 +14,6 @@ export const Home: React.FC = () => {
       <Graphics />
       <Contact />
       <Footer />
-  </>
+    </>
   );
 };

@@ -13,7 +13,7 @@ export const Container = styled.div`
 
 export const Form = styled.form`
   width: 300px;
-  height: 400px;
+  height: 70%;
   display: flex;
   flex-direction: column;
 
@@ -63,7 +63,7 @@ export const ContainerInput = styled.label<PassType>`
     ${props =>
       props.hasErro &&
       css`
-        /*   border-color: #c53030; */
+        border-color: #c53030;
       `}
   }
 `;
@@ -78,6 +78,12 @@ export const ButtonCreate = styled.button`
   border-radius: 0.3rem;
   color: #fff;
   background-color: #000;
+  transition: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
+  &:hover {
+    color: #000;
+    background-color: #fff;
+  }
 `;
 export const ButtonGoogle = styled.button`
   width: 80%;

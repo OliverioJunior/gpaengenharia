@@ -18,8 +18,8 @@ export const Container = styled.section`
       width: 30em;
       margin-left: 10em;
 
-      h4{
-        margin-top:1em;
+      h4 {
+        margin-top: 1em;
       }
 
       form {

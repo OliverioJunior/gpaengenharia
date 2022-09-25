@@ -16,9 +16,10 @@ import {
   getAuth,
 } from 'firebase/auth';
 import { auth } from '../../services/firebase';
-import { FormEvent, useCallback, useRef } from 'react';
+import { FormEvent, useCallback, useRef, useState } from 'react';
 
 export const LoginOrSingIn: React.FC = () => {
+  const [mode, setMode] = useState(true);
   const nameRef = useRef<HTMLInputElement>(null) ?? false;
   const emailRef = useRef<HTMLInputElement>(null) ?? false;
   const passRef = useRef<HTMLInputElement>(null) ?? false;
@@ -36,6 +37,10 @@ export const LoginOrSingIn: React.FC = () => {
         window.location.href = '/';
       });
   }
+  const ConfirmarSenha = useCallback(() => {
+    const pass = passRef.current?.value;
+    const passConfirm = passConfirmRef.current?.value;
+  }, [passRef, passConfirmRef]);
   const onSubmit = useCallback(
     (event: FormEvent) => {
       event.preventDefault();
@@ -66,41 +71,86 @@ export const LoginOrSingIn: React.FC = () => {
 
   return (
     <Container>
-      <WrapperLogo>
-        <Logo>GPA</Logo>
-        <img src={logo} alt="logo" />
-      </WrapperLogo>
+      {mode ? (
+        <>
+          <WrapperLogo>
+            <Logo>GPA</Logo>
+            <img src={logo} alt="logo" />
+          </WrapperLogo>
 
-      <Form onSubmit={onSubmit}>
-        <ContainerInput hasErro>
-          <input
-            ref={nameRef}
-            type="text"
-            min={3}
-            required
-            placeholder="Nome"
-          />
-        </ContainerInput>
-        <ContainerInput hasErro>
-          <input ref={emailRef} type="email" required placeholder="Email" />
-        </ContainerInput>
-        <ContainerInput hasErro>
-          <input ref={passRef} type="password" required placeholder="Senha" />
-        </ContainerInput>
-        <ContainerInput hasErro>
-          <input
-            ref={passConfirmRef}
-            type="password"
-            required
-            placeholder="Confirme sua senha"
-          />
-        </ContainerInput>
-        <ButtonCreate type="submit">Criar Conta</ButtonCreate>
-        <ButtonGoogle type="button" onClick={handleGoogleSignIn}>
-          <img src={gmail} alt="gmail" />
-          entrar com a conta google
-        </ButtonGoogle>
-      </Form>
+          <Form onSubmit={onSubmit}>
+            <ContainerInput
+              hasErro={Boolean(() => {
+                if (nameRef.current?.value) console.log(nameRef.current.value);
+              })}
+            >
+              <input
+                ref={nameRef}
+                type="text"
+                min={3}
+                required
+                placeholder="Nome"
+              />
+            </ContainerInput>
+            <ContainerInput hasErro>
+              <input ref={emailRef} type="email" required placeholder="Email" />
+            </ContainerInput>
+            <ContainerInput hasErro>
+              <input
+                ref={passRef}
+                type="password"
+                required
+                placeholder="Senha"
+              />
+            </ContainerInput>
+            <ContainerInput hasErro>
+              <input
+                ref={passConfirmRef}
+                type="password"
+                required
+                placeholder="Confirme sua senha"
+              />
+            </ContainerInput>
+            <ButtonCreate type="submit">Criar Conta</ButtonCreate>
+            <ButtonGoogle type="button" onClick={handleGoogleSignIn}>
+              <img src={gmail} alt="gmail" />
+              entrar com a conta google
+            </ButtonGoogle>
+          </Form>
+        </>
+      ) : (
+        <>
+          <WrapperLogo>
+            <Logo>GPA</Logo>
+            <img src={logo} alt="logo" />
+          </WrapperLogo>
+
+          <Form onSubmit={onSubmit}>
+            <ContainerInput hasErro>
+              <input ref={emailRef} type="email" required placeholder="Email" />
+            </ContainerInput>
+            <ContainerInput hasErro>
+              <input
+                ref={passRef}
+                type="password"
+                required
+                placeholder="Senha"
+              />
+            </ContainerInput>
+            <ButtonCreate type="submit">Log In</ButtonCreate>
+            <ButtonGoogle type="button" onClick={handleGoogleSignIn}>
+              <img src={gmail} alt="gmail" />
+              entrar com a conta google
+            </ButtonGoogle>
+          </Form>
+        </>
+      )}
+
+      {mode && (
+        <ButtonCreate onClick={() => setMode(!mode)}>
+          Já tenho conta
+        </ButtonCreate>
+      )}
     </Container>
   );
 };
