@@ -1,5 +1,7 @@
-import styled from 'styled-components';
-
+import styled, { css } from 'styled-components';
+type PassType = {
+  hasErro: boolean;
+};
 export const Container = styled.div`
   height: 100vh;
   display: flex;
@@ -41,7 +43,7 @@ export const Logo = styled.h1`
   text-align: center;
 `;
 
-export const ContainerInput = styled.label`
+export const ContainerInput = styled.label<PassType>`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -52,11 +54,43 @@ export const ContainerInput = styled.label`
   input {
     width: 80%;
     height: 30px;
-    border: none;
-    padding-left: 5px;
+    border: 2px solid #fff;
+    padding-left: 1rem;
     border-radius: 4px;
     &:focus {
       outline: none;
     }
+    ${props =>
+      props.hasErro &&
+      css`
+        /*   border-color: #c53030; */
+      `}
+  }
+`;
+export const ButtonCreate = styled.button`
+  width: 80%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 1rem;
+  border-radius: 0.3rem;
+  color: #fff;
+  background-color: #000;
+`;
+export const ButtonGoogle = styled.button`
+  width: 80%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  margin-top: 1rem;
+  border-radius: 0.3rem;
+  img {
+    margin-right: 1rem;
+    width: 30px;
   }
 `;

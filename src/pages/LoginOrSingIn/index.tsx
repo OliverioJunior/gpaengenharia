@@ -1,28 +1,69 @@
-import { Container, ContainerInput, Form, Logo, WrapperLogo } from './styles';
+import {
+  ButtonCreate,
+  ButtonGoogle,
+  Container,
+  ContainerInput,
+  Form,
+  Logo,
+  WrapperLogo,
+} from './styles';
+import gmail from '../../assets/gmail.png';
 import logo from '../../assets/logo.png';
+import {
+  GoogleAuthProvider,
+  signInWithPopup,
+  createUserWithEmailAndPassword,
+  getAuth,
+} from 'firebase/auth';
+import { auth } from '../../services/firebase';
+import { FormEvent, useCallback, useRef } from 'react';
+
 export const LoginOrSingIn: React.FC = () => {
-  const form = [
-    {
-      id: 1,
-      placeholder: 'nome',
-      min: 3,
+  const nameRef = useRef<HTMLInputElement>(null) ?? false;
+  const emailRef = useRef<HTMLInputElement>(null) ?? false;
+  const passRef = useRef<HTMLInputElement>(null) ?? false;
+  const passConfirmRef = useRef<HTMLInputElement>(null) ?? false;
+  async function handleGoogleSignIn() {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      .then(result => {
+        console.log(result);
+      })
+      .catch(error => {
+        console.log(error);
+      })
+      .finally(() => {
+        window.location.href = '/';
+      });
+  }
+  const onSubmit = useCallback(
+    (event: FormEvent) => {
+      event.preventDefault();
+      const email = emailRef.current?.value;
+      const pass = passRef.current?.value;
+      console.log(emailRef.current?.value);
+      if (email && pass) {
+        handleEmailSignIn(email, pass);
+      }
     },
-    {
-      id: 2,
-      placeholder: 'email',
-      min: 3,
-    },
-    {
-      id: 3,
-      placeholder: 'senha',
-      min: 6,
-    },
-    {
-      id: 4,
-      placeholder: 'confirmar-senha',
-      min: 6,
-    },
-  ];
+
+    [emailRef, passRef],
+  );
+  async function handleEmailSignIn(email: string, password: string) {
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(userCredential => {
+        // Signed in
+        const user = userCredential.user;
+        console.log(user);
+      })
+      .catch(error => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+      });
+  }
+
   return (
     <Container>
       <WrapperLogo>
@@ -30,18 +71,35 @@ export const LoginOrSingIn: React.FC = () => {
         <img src={logo} alt="logo" />
       </WrapperLogo>
 
-      <Form>
-        {form.map(item => {
-          return (
-            <ContainerInput key={item.id}>
-              <input
-                type="text"
-                min={item.min}
-                placeholder={item.placeholder}
-              />
-            </ContainerInput>
-          );
-        })}
+      <Form onSubmit={onSubmit}>
+        <ContainerInput hasErro>
+          <input
+            ref={nameRef}
+            type="text"
+            min={3}
+            required
+            placeholder="Nome"
+          />
+        </ContainerInput>
+        <ContainerInput hasErro>
+          <input ref={emailRef} type="email" required placeholder="Email" />
+        </ContainerInput>
+        <ContainerInput hasErro>
+          <input ref={passRef} type="password" required placeholder="Senha" />
+        </ContainerInput>
+        <ContainerInput hasErro>
+          <input
+            ref={passConfirmRef}
+            type="password"
+            required
+            placeholder="Confirme sua senha"
+          />
+        </ContainerInput>
+        <ButtonCreate type="submit">Criar Conta</ButtonCreate>
+        <ButtonGoogle type="button" onClick={handleGoogleSignIn}>
+          <img src={gmail} alt="gmail" />
+          entrar com a conta google
+        </ButtonGoogle>
       </Form>
     </Container>
   );
