@@ -1,5 +1,4 @@
 import { Container, ContainerContacts, ContainerImg } from './styles';
-import engenharia2 from '../../assets/engenharia2.png';
 import * as Prismic from '@prismicio/client';
 import { useState, useEffect } from 'react';
 

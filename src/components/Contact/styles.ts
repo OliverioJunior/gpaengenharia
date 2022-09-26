@@ -2,9 +2,11 @@ import styled from 'styled-components';
 export const Container = styled.section`
   display: flex;
   flex: 1;
+  padding-bottom: 2rem;
   @media (max-width: 950px) {
     flex-direction: column;
     align-items: center;
+    padding-bottom: 0;
   }
 `;
 export const ContainerContacts = styled.div`
