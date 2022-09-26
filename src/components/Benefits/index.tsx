@@ -1,4 +1,4 @@
-import { Container, ContainerImg } from './styles';
+import { Container, ContainerImg, ContainerSection } from './styles';
 import gestao from '../../assets/gestao.png';
 import * as Prismic from '@prismicio/client';
 import { useState, useEffect } from 'react';
@@ -33,7 +33,7 @@ export const Benefits: React.FC = () => {
   return (
     <>
       <Container>
-        <div>
+        <ContainerSection>
           {banner.map(item => {
             return (
               <section key={item.id}>
@@ -42,7 +42,7 @@ export const Benefits: React.FC = () => {
               </section>
             );
           })}
-        </div>
+        </ContainerSection>
         <ContainerImg>
           <img src={gestao} loading="lazy" />
         </ContainerImg>

@@ -63,7 +63,7 @@ export const Header: React.FC = () => {
             <li>
               <a href="#contato"> {items.contact} </a>
             </li>
-            <li id="cadastro">
+            <li>
               <a href="/LoginOrSingIn"> {items.login} </a>
             </li>
           </List>
