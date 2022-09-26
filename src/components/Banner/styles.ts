@@ -21,7 +21,7 @@ export const Container = styled.section`
     letter-spacing: 0.188rem;
   }
   h2 {
-    width: 25em;
+    display: flex;
     margin: 12.25rem auto 0 auto;
     padding: 0 5rem;
     font-style: Monserrat;

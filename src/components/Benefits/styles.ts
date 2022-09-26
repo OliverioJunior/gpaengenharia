@@ -34,11 +34,6 @@ export const Container = styled.section`
         text-align: justify;
       }
     }
-
-    #subtema {
-      position: relative;
-      left: -3.55em;
-    }
   }
 `;
 

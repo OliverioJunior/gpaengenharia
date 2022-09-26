@@ -37,6 +37,7 @@ export const Header: React.FC = () => {
     }
     fechData();
   }, []);
+
   return (
     <StyledHeader>
       <div>

@@ -24,6 +24,9 @@ export const List = styled.ul`
     color: #545252;
     padding: 0 1.5em;
 
+    &::first-letter {
+      text-transform: uppercase;
+    }
     &:nth-child(n + 2) {
       margin-left: 0.625rem;
     }
