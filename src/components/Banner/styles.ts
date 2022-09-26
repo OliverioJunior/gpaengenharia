@@ -12,7 +12,7 @@ export const Container = styled.section<ImgProps>`
   background-image: url(${({ imgSrc }) => imgSrc});
   background-size: 100% 100% no-repeat;
   flex: 1;
-  height: calc(100vh - 60px);
+  height: calc(100vh);
   h1 {
     margin: 0 auto;
     font-style: Monserrat;
@@ -48,6 +48,7 @@ export const Container = styled.section<ImgProps>`
     h2 {
       font-size: 1.5rem;
       margin: 2rem auto 0 auto;
+      padding: 0 3rem;
     }
   }
   @media (max-width: 650px) {

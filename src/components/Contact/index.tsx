@@ -1,6 +1,13 @@
 import { Container, ContainerContacts, ContainerImg } from './styles';
 import * as Prismic from '@prismicio/client';
-import { useState, useEffect } from 'react';
+import {
+  useState,
+  useEffect,
+  useContext,
+  useRef,
+  useLayoutEffect,
+} from 'react';
+import { AuthContext } from '../../providers/auth';
 
 const endpoint = Prismic.getRepositoryEndpoint('gpaengenharia0');
 const client = Prismic.createClient(endpoint);
@@ -16,6 +23,8 @@ type ContactTypes = {
 
 export const Contact: React.FC = () => {
   const [contact, setContact] = useState<ContactTypes[]>([]);
+  const { setoffSetContact } = useContext(AuthContext);
+  const contactRef = useRef<HTMLTableSectionElement>(null) ?? false;
 
   useEffect(() => {
     async function fechData() {
@@ -36,8 +45,13 @@ export const Contact: React.FC = () => {
     }
     fechData();
   }, []);
+  useLayoutEffect(() => {
+    const contact = contactRef.current;
+    console.log(contact?.offsetTop);
+    if (contact && contact.offsetTop) setoffSetContact(contact.offsetTop);
+  }, [contactRef, setoffSetContact]);
   return (
-    <Container>
+    <Container ref={contactRef}>
       <ContainerContacts>
         {contact.map(item => {
           return (
