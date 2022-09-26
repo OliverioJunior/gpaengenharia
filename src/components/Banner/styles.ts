@@ -1,13 +1,15 @@
 import styled from 'styled-components';
-import banner from '../../assets/banner.png';
-export const Container = styled.section`
+type ImgProps = {
+  imgSrc: string;
+};
+export const Container = styled.section<ImgProps>`
   display: flex;
   flex-direction: column;
 
   align-items: center;
   justify-content: center;
 
-  background-image: url(${banner});
+  background-image: url(${({ imgSrc }) => imgSrc});
   background-size: 100% 100% no-repeat;
   flex: 1;
   height: calc(100vh - 60px);
@@ -18,18 +20,16 @@ export const Container = styled.section`
     font-weight: normal;
     text-shadow: 0.2px 0.5px #cbcaca;
     color: #cbcaca;
-    letter-spacing: 0.188rem;
   }
   h2 {
     display: flex;
     margin: 12rem auto 0 auto;
-    padding: 0 5rem;
+    padding: 0 7rem;
     font-style: Monserrat;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: normal;
     text-shadow: 0.2px 0.5px #ccc;
     color: #fff;
-    letter-spacing: 0.188rem;
     text-align: center;
   }
   @media (max-width: 1070px) {
