@@ -1,49 +1,39 @@
-import { Container } from './styles';
+import { Container, ContainerContacts, ContainerImg } from './styles';
 import engenharia2 from '../../assets/engenharia2.png';
 export const Contact: React.FC = () => {
   return (
     <Container>
-      <div>
-        <section>
-          <h4>Contato:</h4>
-          <form action="#" method="post" encType="multipart/form-data">
-            <label>
-              <span>
-                <i className="icon icon-user-1"></i> Nome
-              </span>
-              <input type="text" name="nome" />
-            </label>
-
-            <label>
-              <span>
-                <i className="icon icon-email"></i> E-mail
-              </span>
-              <input type="text" name="email" className="fade_8S" />
-            </label>
-            <label>
-              <span>
-                <i className="icon icon-flag"></i> Assunto
-              </span>
-              <input type="text" name="assunto" />
-            </label>
-
-            <label>
-              <span id="message">
-                <i className="icon icon-comment"></i> Mensagem
-              </span>
-              <textarea name="mensagem" rows={3} required={true}></textarea>
-            </label>
-
-            <input type="hidden" name="acao" value="enviar" />
-            <button className="btn-envia" title="Enviar">
-              <b className="icon icon-paper-plane-o"> Enviar</b>
-            </button>
-          </form>
-        </section>
+      <ContainerContacts>
         <div>
-          <img src={engenharia2} />
+          <h4>Contato:</h4>
+          <ul>
+            <li>
+              <a
+                href="mailto:gpa.solucoes.engenharia@gmail.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                gpa.solucoes.engenharia@gmail.com
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://api.whatsapp.com/send?phone=552120069891"
+                target="_blank"
+                rel="noreferrer"
+              >
+                +55(21) 2006-9891
+              </a>
+            </li>
+            <li>
+              <a target="_blank">@gbasoluctions</a>
+            </li>
+          </ul>
         </div>
-      </div>
+      </ContainerContacts>
+      <ContainerImg>
+        <img src={engenharia2} />
+      </ContainerImg>
     </Container>
   );
 };

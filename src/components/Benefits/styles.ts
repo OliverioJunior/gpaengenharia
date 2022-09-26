@@ -11,8 +11,9 @@ export const Container = styled.section`
     flex-direction: column;
     align-items: center;
   }
-  @media (max-width: 650px) {
+  @media (max-width: 750px) {
     padding: 0 1rem;
+    justify-content: center;
     h3 {
       font-size: 1.5rem;
     }
@@ -70,8 +71,11 @@ export const ContainerSection = styled.div`
     }
   }
   @media (max-width: 650px) {
-    h3 {
-      font-size: 1.5rem;
+    section {
+      padding: 1rem 1rem 0 1rem;
+      h3 {
+        font-size: 1.5rem;
+      }
     }
   }
 `;
@@ -85,9 +89,11 @@ export const ContainerImg = styled.div`
   }
   @media (max-width: 950px) {
     width: 100%;
-
     h3 {
       font-size: 2rem;
     }
+  }
+  @media (max-width: 750px) {
+    display: none;
   }
 `;

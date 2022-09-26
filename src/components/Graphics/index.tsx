@@ -28,27 +28,24 @@ export const Graphics: React.FC = () => {
         };
       });
       setGrafics(resultFormated);
-      console.log(result);
     }
     fechData();
   }, []);
 
   return (
     <Container>
-      <div>
-        <ContainerImg>
-          <img src={grafico} loading="lazy" />
-        </ContainerImg>
-        {grafics.map(item => {
-          return (
-            <section key={item.id}>
-              <h3>{item.titulo}</h3>
-              <p>{item.paragraph}</p>
-              <p>{item.description}</p>
-            </section>
-          );
-        })}
-      </div>
+      <ContainerImg>
+        <img src={grafico} loading="lazy" />
+      </ContainerImg>
+      {grafics.map(item => {
+        return (
+          <section key={item.id}>
+            <h3>{item.titulo}</h3>
+            <p>{item.paragraph}</p>
+            <p>{item.description}</p>
+          </section>
+        );
+      })}
     </Container>
   );
 };

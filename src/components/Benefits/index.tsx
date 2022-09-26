@@ -1,5 +1,4 @@
 import { Container, ContainerImg, ContainerSection } from './styles';
-import gestao from '../../assets/gestao.png';
 import * as Prismic from '@prismicio/client';
 import { useState, useEffect } from 'react';
 
@@ -10,6 +9,7 @@ type BannerTypes = {
   id: string;
   titulo: string;
   description: string;
+  img: string | undefined;
 };
 
 export const Benefits: React.FC = () => {
@@ -23,13 +23,13 @@ export const Benefits: React.FC = () => {
           id: item.id,
           titulo: item.data.titulo[0].text,
           description: item.data.description,
+          img: item.data.img ? item.data.img.url : undefined,
         };
       });
       setBanner(resultFormated);
     }
     fechData();
   }, []);
-
   return (
     <>
       <Container>
@@ -44,7 +44,11 @@ export const Benefits: React.FC = () => {
           })}
         </ContainerSection>
         <ContainerImg>
-          <img src={gestao} loading="lazy" />
+          {banner.map(item => {
+            if (item.img) {
+              return <img key={item.img} src={item.img} loading="lazy" />;
+            }
+          })}
         </ContainerImg>
       </Container>
       <hr />

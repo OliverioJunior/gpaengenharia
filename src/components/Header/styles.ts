@@ -47,16 +47,16 @@ export const List = styled.ul`
       }
     }
     &:last-child {
-      border: 1px solid blue;
+      border: 1px solid #002255;
       padding: 0.5em;
       border-radius: 6px;
       color: white;
-      background-color: blue;
+      background-color: #002255;
 
       &:hover {
         transform: scale(1.1);
         transition: 0.3s;
-        background-color: blue;
+        background-color: #002294;
         a {
           color: #fff;
           border: none;
