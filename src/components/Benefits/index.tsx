@@ -1,6 +1,13 @@
 import { Container, ContainerImg, ContainerSection } from './styles';
 import * as Prismic from '@prismicio/client';
-import { useState, useEffect } from 'react';
+import {
+  useState,
+  useEffect,
+  useContext,
+  useRef,
+  useLayoutEffect,
+} from 'react';
+import { AuthContext } from '../../providers/auth';
 
 const endpoint = Prismic.getRepositoryEndpoint('gpaengenharia0');
 const client = Prismic.createClient(endpoint);
@@ -14,6 +21,8 @@ type BannerTypes = {
 
 export const Benefits: React.FC = () => {
   const [banner, setBanner] = useState<BannerTypes[]>([]);
+  const { setOffSetAbout } = useContext(AuthContext);
+  const aboutRef = useRef<HTMLTableSectionElement>(null) ?? false;
   useEffect(() => {
     async function fechData() {
       const result = await client.getAllByType('benefits');
@@ -30,9 +39,14 @@ export const Benefits: React.FC = () => {
     }
     fechData();
   }, []);
+  useLayoutEffect(() => {
+    const about = aboutRef.current;
+    console.log(about?.offsetTop);
+    if (about && about.offsetTop) setOffSetAbout(about.offsetTop);
+  }, [aboutRef, setOffSetAbout]);
   return (
     <>
-      <Container>
+      <Container ref={aboutRef}>
         <ContainerSection>
           {banner.map(item => {
             return (

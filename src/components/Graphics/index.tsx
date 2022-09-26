@@ -1,7 +1,14 @@
 import { Container, ContainerImg } from './styles';
 import grafico from '../../assets/grafico.png';
-import { useEffect, useState } from 'react';
+import {
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+  useLayoutEffect,
+} from 'react';
 import * as Prismic from '@prismicio/client';
+import { AuthContext } from '../../providers/auth';
 
 const endpoint = Prismic.getRepositoryEndpoint('gpaengenharia0');
 const client = Prismic.createClient(endpoint);
@@ -14,6 +21,8 @@ type GraphicTypes = {
 };
 export const Graphics: React.FC = () => {
   const [grafics, setGrafics] = useState<GraphicTypes[]>([]);
+  const { setoffSetGrafic } = useContext(AuthContext);
+  const graficRef = useRef<HTMLDivElement>(null) ?? false;
 
   useEffect(() => {
     async function fechData() {
@@ -31,9 +40,13 @@ export const Graphics: React.FC = () => {
     }
     fechData();
   }, []);
+  useLayoutEffect(() => {
+    const grafic = graficRef.current as HTMLDivElement;
+    setoffSetGrafic(grafic.offsetTop);
+  }, [graficRef, setoffSetGrafic]);
 
   return (
-    <Container>
+    <Container ref={graficRef}>
       <ContainerImg>
         <img src={grafico} loading="lazy" />
       </ContainerImg>

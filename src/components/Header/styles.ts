@@ -5,13 +5,24 @@ export const Header = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 0 9rem;
-
+  position: fixed;
+  background-color: #fff;
   width: 100%;
   height: 60px;
 
   div {
-    span {
-      color: #545252;
+    a {
+      display: flex;
+      align-items: flex-end;
+      span {
+        color: #fff;
+        background-color: #002255;
+        padding: 0.5rem;
+        height: 50%;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+      }
     }
   }
   @media (max-width: 1076px) {
