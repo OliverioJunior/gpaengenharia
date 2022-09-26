@@ -6,14 +6,14 @@ export const Footer: React.FC = () => {
       <div>
         <img src={logo} alt="empresa" />
         <span>G.P.A</span>
-        <hr />
-        <ul>
-          <li>Home</li>
-          <li>Vantagens</li>
-          <li>Gráficos</li>
-          <li>Contato</li>
-        </ul>
       </div>
+      <hr />
+      <ul>
+        <li>Home</li>
+        <li>Vantagens</li>
+        <li>Gráficos</li>
+        <li>Contato</li>
+      </ul>
     </Container>
   );
 };
